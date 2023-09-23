@@ -1,0 +1,70 @@
+@charset "UTF-8" ;
+/*
+Changing table border 
+*/
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+/*
+Resizing the table
+*/
+tbody tr{
+    height: 50px;
+}
+
+table{
+    width: 75%;
+}
+
+/*
+ Changing color of particular colums and "Lunch" row
+*/
+td.LUNCH{
+    background-color: rgb(220, 220, 220);
+}
+
+tr.day{
+    height: 10px;
+    background-color: rgb(220, 220, 220);
+}
+
+th.time{
+    background-color: rgb(220, 220, 220);
+}
+
+tfoot th{
+    color: rgb(255, 255, 255);
+    text-align: left;
+    background-color: rgb(121, 121, 121);
+}
+
+/*
+Seting background color for cels depending of content(lesson)
+*/
+
+td.PROG1700{
+    background-color: #BEAFE1;
+}
+
+td.WEBD1000{
+    background-color:#cdf394;
+}
+
+td.COMM1700{
+    background-color: #3b80ff94;
+}
+
+td.OSYS1200{
+    background-color: #eee569c0 ;
+}
+
+td.DBAS1007{
+    background-color: #d8d260b7;
+}
+
+td.NETW1700{
+    background-color: #ec6a6ab9;
+}
+

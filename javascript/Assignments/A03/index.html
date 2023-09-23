@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="script.js" defer></script>
+    <title>Schedule</title>
+</head>
+<body>
+    <p id="title">Schedule</p>
+    <p id="description-of-course">IT prgramming program 1st year</p>
+    <button type="button" id="clear-view">Clear View</button>
+    <button type="button" id="return-view">Return to normal</button>
+    <table>
+    <tr class="day">
+        <th>Time / Day</th>
+        <th >Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+    </tr>
+    <tr>
+        <th class="time">8:30</th>
+        <td class="PROG1700" rowspan="2">PROG1700</td>
+        <td class="PROG1700" rowspan="2">PROG1700</td>
+        <td rowspan="2"></td>
+        <td class="PROG1700" rowspan="2">PROG1700</td>
+        <td class="WEBD1000" rowspan="2">WEBD1000</td>
+    </tr> 
+    <tr>
+        <th class="time">9:30</th>
+    </tr>
+    <tr>
+        <th class="time">10:30</th>
+        <td class="COMM1700">COMM1700</td>
+        <td class="OSYS1200">OSYS1200</td>
+        <td class="WEBD1000">WEBD1000</td>
+        <td class="OSYS1200">OSYS1200</td>
+        <td></td>
+    </tr>
+    <tr>
+        <th class="time">11:30</th>
+        <td class="LUNCH" colspan="5">LUNCH</td>
+    </tr>
+    <tr>
+        <th class="time">12:30</th>
+        <td class="COMM1700">COMM1700</td>
+        <td class="OSYS1200">OSYS1200</td>
+        <td class="WEBD1000" >WEBD1000</td>
+        <td class="OSYS1200">OSYS1200</td>
+        <td rowspan="3"></td>
+    </tr>
+    <tr>
+        <th class="time">1:30</th>
+        <td class="DBAS1007" rowspan="2">DBAS1007</td>
+        <td class="NETW1700" rowspan="2">NETW1700</td>
+        <td class="DBAS1007" rowspan="2">DBAS1007</td>
+        <td class="NETW1700" rowspan="2">NETW1700</td>
+    </tr>
+    <tr>
+        <th class="time">2:30</th>
+    </tr>
+    <tfoot>
+        <th colspan="6">  IT programming 1st year</th>
+    </tfoot>
+    </table>
+    <div id="info">
+        <h3>
+            <a href="https://www.nscc.ca/campuses/cogs/">Annapolis Valley Campus - Centre of Geographic Sciences (COGS)</a>
+        </h3>   
+        <p><address>RR#1, 50 Elliott Road</address></p>
+        <p><address>Lawrencetown, Nova Scotia B0S 1M0</address></p>
+        <h5>Contact</h5>
+        <p>Phone: 902-825-3491</p>
+        <p>Fax: 902-584-7211</p>
+        <p><a href="mailto">avc.info@nscc.ca</a></p>
+        <p>Student Services: 902-825-2930</p>
+    </div>
+</body>
+</html>
