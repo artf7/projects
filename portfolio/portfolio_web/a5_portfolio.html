@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Assignment 2</title>
+</head>
+<body>
+    <div id ="code_page_header">
+    <h1>Assignment 4</h1>
+    <h2>File I/O</h2>
+    </div>
+    <a id="back_link" href="projects.html">Back</a>
+    <div id="code_content">   
+ <h3>Creating and Edit SQL database</h3>
+ <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(32, 32, 29); color: rgb(166, 162, 140); padding: 0.5em;"><span class="hljs-keyword" style="color: rgb(184, 84, 212);">import</span> sqlite3 <span class="hljs-keyword" style="color: rgb(184, 84, 212);">as</span> PROGdemo
+<span class="hljs-comment" style="color: rgb(153, 149, 128);">#connection to database to further work with it</span>
+conn = PROGdemo.connect(<span class="hljs-string" style="color: rgb(96, 172, 57);">"persons.sqlite"</span>)
+<span class="hljs-function"><span class="hljs-keyword" style="color: rgb(184, 84, 212);">def</span> <span class="hljs-title" style="color: rgb(102, 132, 225);">main</span><span class="hljs-params" style="color: rgb(182, 86, 17);">()</span>:</span>
+
+    <span class="hljs-comment" style="color: rgb(153, 149, 128);">#creating functuion that output all values from database</span>
+    <span class="hljs-function"><span class="hljs-keyword" style="color: rgb(184, 84, 212);">def</span> <span class="hljs-title" style="color: rgb(102, 132, 225);">all</span><span class="hljs-params" style="color: rgb(182, 86, 17);">()</span>:</span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">with</span> conn:
+            data = conn.execute(<span class="hljs-string" style="color: rgb(96, 172, 57);">'Select * from person'</span>)
+            <span class="hljs-keyword" style="color: rgb(184, 84, 212);">for</span> rec <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> data:
+                print(rec)
+                
+    <span class="hljs-comment" style="color: rgb(153, 149, 128);">#creating function that output row that related with specific last name </span>
+    <span class="hljs-function"><span class="hljs-keyword" style="color: rgb(184, 84, 212);">def</span> <span class="hljs-title" style="color: rgb(102, 132, 225);">last</span><span class="hljs-params" style="color: rgb(182, 86, 17);">()</span>:</span>
+        <span class="hljs-comment" style="color: rgb(153, 149, 128);"># user input, where user should input a last name</span>
+        user_input = input(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Enter last name: "</span>)
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">with</span> conn:
+            data = conn.execute(f<span class="hljs-string" style="color: rgb(96, 172, 57);">'Select * from person where LastName = "{user_input}"'</span>)<span class="hljs-comment" style="color: rgb(153, 149, 128);">#query that specified the row that should be outputted</span>
+            <span class="hljs-keyword" style="color: rgb(184, 84, 212);">for</span> rec <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> data:
+               print(rec)
+                
+    <span class="hljs-comment" style="color: rgb(153, 149, 128);">#creating function that addinng new row into a tababese </span>
+    <span class="hljs-function"><span class="hljs-keyword" style="color: rgb(184, 84, 212);">def</span> <span class="hljs-title" style="color: rgb(102, 132, 225);">add</span><span class="hljs-params" style="color: rgb(182, 86, 17);">()</span>:</span>
+        <span class="hljs-comment" style="color: rgb(153, 149, 128);">#checing did user use numbers while imputing ID  </span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">try</span>: 
+            user_id = int(input(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Enter person's ID: "</span>))
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">except</span> ValueError:
+            <span class="hljs-keyword" style="color: rgb(184, 84, 212);">raise</span>(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Use only numbers"</span>)
+        first_name = input(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Enter first name: "</span>)
+        middle_name = input(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Enter middle name: "</span>)
+        last_name = input(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Enter last name:"</span>)
+        date_of_birth = input(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Enter date of birth: "</span>)
+        username = input(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Enter username: "</span>)
+        email = input(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Enter email : "</span>)
+        password = input(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Enter password : "</span>)
+        <span class="hljs-comment" style="color: rgb(153, 149, 128);">#checing did user use numbers while imputing Address_ID </span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">try</span>:
+            address_id = input(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Enter address id: "</span>)
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">except</span> ValueError:
+            <span class="hljs-keyword" style="color: rgb(184, 84, 212);">raise</span>(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Use only numbers"</span>)
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">with</span> conn:
+            <span class="hljs-comment" style="color: rgb(153, 149, 128);">#checking if middle name is emplty and put Null value if it is</span>
+            <span class="hljs-keyword" style="color: rgb(184, 84, 212);">if</span> middle_name == <span class="hljs-string" style="color: rgb(96, 172, 57);">''</span> <span class="hljs-keyword" style="color: rgb(184, 84, 212);">or</span> middle_name == <span class="hljs-string" style="color: rgb(96, 172, 57);">' '</span>:
+                data = conn.execute(f<span class="hljs-string" style="color: rgb(96, 172, 57);">"INSERT INTO person(ID, FirstName,MiddleName, LastName, DateOfBirth, Username, Email, Password,AddressID) VALUES({user_id},'{first_name}',Null,'{last_name}','{date_of_birth}','{username}','{email}','{password}','{address_id}')"</span>)
+            <span class="hljs-keyword" style="color: rgb(184, 84, 212);">else</span>:
+                data = conn.execute(f<span class="hljs-string" style="color: rgb(96, 172, 57);">"INSERT INTO person(ID, FirstName,MiddleName, LastName, DateOfBirth, Username, Email, Password,AddressID) VALUES({user_id},'{first_name}','{middle_name}','{last_name}','{date_of_birth}','{username}','{email}','{password}','{address_id}')"</span>)
+            <span class="hljs-keyword" style="color: rgb(184, 84, 212);">for</span> rec <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> data:
+                print(rec)
+                
+     <span class="hljs-comment" style="color: rgb(153, 149, 128);">#printing instructions for user input</span>
+    print(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Enter: \n1 if you want to see all information in database\n2 if you want to see row to related to specific last name\n3 if you want to add new row."</span>)
+    is_uin = <span class="hljs-keyword" style="color: rgb(184, 84, 212);">True</span>
+    <span class="hljs-comment" style="color: rgb(153, 149, 128);">#cheking is user input correct</span>
+    <span class="hljs-keyword" style="color: rgb(184, 84, 212);">while</span> is_uin:
+        <span class="hljs-comment" style="color: rgb(153, 149, 128);">#checing did user use numbers  </span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">try</span>: 
+            ui = int(input(<span class="hljs-string" style="color: rgb(96, 172, 57);">'&gt; '</span>))
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">except</span> ValueError:
+            <span class="hljs-keyword" style="color: rgb(184, 84, 212);">raise</span>(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Use only numbers"</span>)
+        <span class="hljs-comment" style="color: rgb(153, 149, 128);"># checking did user number in range from 1 to 3, overwise it prints how input should looks like</span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">if</span> ui == <span class="hljs-number" style="color: rgb(182, 86, 17);">1</span>:
+            all()
+            is_uin = <span class="hljs-keyword" style="color: rgb(184, 84, 212);">False</span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">elif</span> ui == <span class="hljs-number" style="color: rgb(182, 86, 17);">2</span>: 
+            last()
+            is_uin = <span class="hljs-keyword" style="color: rgb(184, 84, 212);">False</span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">elif</span> ui == <span class="hljs-number" style="color: rgb(182, 86, 17);">3</span>:
+            add()
+            is_uin = <span class="hljs-keyword" style="color: rgb(184, 84, 212);">False</span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">else</span>: 
+            print(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Use only numbers from 1 to 3"</span>)
+            <span class="hljs-keyword" style="color: rgb(184, 84, 212);">pass</span>
+        
+main()</pre>
+</div>
+<a id="go_up" href="#code_page_header">Up</a>
+</body>
+</html>

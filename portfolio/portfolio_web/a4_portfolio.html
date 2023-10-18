@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Assignment 2</title>
+</head>
+<body>
+    <div id ="code_page_header">
+    <h1>Assignment 4</h1>
+    <h2>File I/O</h2>
+    </div>
+    <a id="back_link" href="projects.html">Back</a>
+    <div id="code_content">   
+    <h3>File Analysis</h3>
+<pre class="hljs" style="display: block; overflow-x: auto; background: rgb(32, 32, 29); color: rgb(166, 162, 140); padding: 0.5em;"><span class="hljs-function"><span class="hljs-keyword" style="color: rgb(184, 84, 212);">def</span> <span class="hljs-title" style="color: rgb(102, 132, 225);">main</span><span class="hljs-params" style="color: rgb(182, 86, 17);">()</span>:</span>
+    <span class="hljs-comment" style="color: rgb(153, 149, 128);">#display unique words in both of files</span>
+    <span class="hljs-function"><span class="hljs-keyword" style="color: rgb(184, 84, 212);">def</span> <span class="hljs-title" style="color: rgb(102, 132, 225);">display_unique</span><span class="hljs-params" style="color: rgb(182, 86, 17);">()</span>:</span>
+        <span class="hljs-comment" style="color: rgb(153, 149, 128);">#creating 2 global variables for using it in </span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">global</span> f1_lst 
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">global</span> f2_lst 
+        <span class="hljs-comment" style="color: rgb(153, 149, 128);">#opening 2 files </span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">with</span> open(<span class="hljs-string" style="color: rgb(96, 172, 57);">'file1.txt'</span>, <span class="hljs-string" style="color: rgb(96, 172, 57);">'r'</span>) <span class="hljs-keyword" style="color: rgb(184, 84, 212);">as</span> f1_lst:
+            f1_lst = f1_lst.read().split(<span class="hljs-string" style="color: rgb(96, 172, 57);">' '</span>)
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">with</span> open(<span class="hljs-string" style="color: rgb(96, 172, 57);">'file2.txt'</span>, <span class="hljs-string" style="color: rgb(96, 172, 57);">'r'</span>) <span class="hljs-keyword" style="color: rgb(184, 84, 212);">as</span> f2_lst:
+            f2_lst = f2_lst.read().split(<span class="hljs-string" style="color: rgb(96, 172, 57);">' '</span>)
+        <span class="hljs-comment" style="color: rgb(153, 149, 128);">#creating 2 global variables for unique words </span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">global</span> f1_unique
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">global</span> f2_unique
+        <span class="hljs-comment" style="color: rgb(153, 149, 128);">#removing space in list</span>
+        f1_lst.remove(<span class="hljs-string" style="color: rgb(96, 172, 57);">''</span>)
+        f2_lst.remove(<span class="hljs-string" style="color: rgb(96, 172, 57);">''</span>)
+        <span class="hljs-comment" style="color: rgb(153, 149, 128);">#creating sets for f1_lst and f2_lst, to create in future list with unique elements</span>
+        f1_unique = set(f1_lst)
+        f2_unique = set(f2_lst)
+        f1_lst = list(f1_unique)
+        f2_lst = list(f2_unique)
+        print(<span class="hljs-string" style="color: rgb(96, 172, 57);">'Unique words in 1st file'</span>)
+        <span class="hljs-comment" style="color: rgb(153, 149, 128);">#printing the list of unique element for first file</span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">for</span> x <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> range(len(f1_lst)):
+            print(f1_lst[x], end=<span class="hljs-string" style="color: rgb(96, 172, 57);">' '</span>)
+        print(<span class="hljs-string" style="color: rgb(96, 172, 57);">'\n'</span>)
+        print(<span class="hljs-string" style="color: rgb(96, 172, 57);">'Unique words in 2nd file'</span>)
+        <span class="hljs-comment" style="color: rgb(153, 149, 128);">#printing the list of unique element for secon file </span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">for</span> x <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> range(len(f2_lst)):
+            print(f2_lst[x], end=<span class="hljs-string" style="color: rgb(96, 172, 57);">' '</span>)
+        print(<span class="hljs-string" style="color: rgb(96, 172, 57);">'\n'</span>)
+    <span class="hljs-comment" style="color: rgb(153, 149, 128);">#displays the words wich appears in both files </span>
+    <span class="hljs-function"><span class="hljs-keyword" style="color: rgb(184, 84, 212);">def</span> <span class="hljs-title" style="color: rgb(102, 132, 225);">words_in_all_files</span><span class="hljs-params" style="color: rgb(182, 86, 17);">()</span>:</span>
+        comp_list = list(f1_unique &amp; f2_unique)
+        print(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Words that appeaer in both of the files"</span>)
+        <span class="hljs-comment" style="color: rgb(153, 149, 128);">#printing the words that appera in both files</span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">for</span> x <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> range(len(comp_list)):
+            print(comp_list[x])
+        print()
+    <span class="hljs-comment" style="color: rgb(153, 149, 128);">#displays the words that appear only in first file</span>
+    <span class="hljs-function"><span class="hljs-keyword" style="color: rgb(184, 84, 212);">def</span> <span class="hljs-title" style="color: rgb(102, 132, 225);">only_in_first</span><span class="hljs-params" style="color: rgb(182, 86, 17);">()</span>:</span>
+        only_1st = []
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">for</span> x <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> range(len(f1_lst)):
+            <span class="hljs-comment" style="color: rgb(153, 149, 128);">#comparing, wich word only in f1_lst</span>
+            <span class="hljs-keyword" style="color: rgb(184, 84, 212);">if</span> f1_lst[x] <span class="hljs-keyword" style="color: rgb(184, 84, 212);">not</span> <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> f2_lst:
+                only_1st.append(f1_lst[x])
+        print(<span class="hljs-string" style="color: rgb(96, 172, 57);">'Words that appear only in 1st file'</span>)
+        <span class="hljs-comment" style="color: rgb(153, 149, 128);">#printing words that exsit only in first file </span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">for</span> x <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> range(len(only_1st)):
+            print(only_1st[x], end=<span class="hljs-string" style="color: rgb(96, 172, 57);">" "</span>)
+        print(<span class="hljs-string" style="color: rgb(96, 172, 57);">'\n'</span>)
+    <span class="hljs-comment" style="color: rgb(153, 149, 128);">#displays the words that appear only in second file</span>
+    <span class="hljs-function"><span class="hljs-keyword" style="color: rgb(184, 84, 212);">def</span> <span class="hljs-title" style="color: rgb(102, 132, 225);">only_in_second</span><span class="hljs-params" style="color: rgb(182, 86, 17);">()</span>:</span>
+        only_2nd = []
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">for</span> x <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> range(len(f2_lst)):
+             <span class="hljs-comment" style="color: rgb(153, 149, 128);">#comparing, wich word only in f2_lst</span>
+            <span class="hljs-keyword" style="color: rgb(184, 84, 212);">if</span> f2_lst[x] <span class="hljs-keyword" style="color: rgb(184, 84, 212);">not</span> <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> f1_lst:
+                only_2nd.append(f2_lst[x])
+        print(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Words that appear only in 2nd file"</span>)
+        <span class="hljs-comment" style="color: rgb(153, 149, 128);">#printing words that exsit only in second file </span>
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">for</span> x <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> range(len(only_2nd)):
+            print(only_2nd[x], end=<span class="hljs-string" style="color: rgb(96, 172, 57);">" "</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword" style="color: rgb(184, 84, 212);">def</span> <span class="hljs-title" style="color: rgb(102, 132, 225);">result</span><span class="hljs-params" style="color: rgb(182, 86, 17);">()</span>:</span>
+        display_unique()
+        words_in_all_files()
+        only_in_first()
+        only_in_second()
+    result()
+main()</pre>
+    <h3>Word Frequency</h3>
+<pre class="hljs" style="display: block; overflow-x: auto; background: rgb(32, 32, 29); color: rgb(166, 162, 140); padding: 0.5em;"><span class="hljs-function"><span class="hljs-keyword" style="color: rgb(184, 84, 212);">def</span> <span class="hljs-title" style="color: rgb(102, 132, 225);">main</span><span class="hljs-params" style="color: rgb(182, 86, 17);">()</span>:</span>
+    <span class="hljs-comment" style="color: rgb(153, 149, 128);">#creating dictionary</span>
+    word_freq  = {}
+    <span class="hljs-comment" style="color: rgb(153, 149, 128);">#open files </span>
+    <span class="hljs-keyword" style="color: rgb(184, 84, 212);">with</span> open(<span class="hljs-string" style="color: rgb(96, 172, 57);">'file1.txt'</span>, <span class="hljs-string" style="color: rgb(96, 172, 57);">'r'</span>) <span class="hljs-keyword" style="color: rgb(184, 84, 212);">as</span> file:
+        file = file.read().split(<span class="hljs-string" style="color: rgb(96, 172, 57);">' '</span>)
+    <span class="hljs-comment" style="color: rgb(153, 149, 128);">#removing space  in list</span>
+    file.remove(<span class="hljs-string" style="color: rgb(96, 172, 57);">''</span>)
+    <span class="hljs-comment" style="color: rgb(153, 149, 128);">#counting words and add number as a value to each keys in dict </span>
+    <span class="hljs-keyword" style="color: rgb(184, 84, 212);">for</span> x <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> range(len(file)):
+        word_freq[file[x]] = file.count(file[x])
+    <span class="hljs-comment" style="color: rgb(153, 149, 128);">#unpacking the dictionary</span>
+    <span class="hljs-keyword" style="color: rgb(184, 84, 212);">for</span> k,v <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> word_freq.items():
+        print(f<span class="hljs-string" style="color: rgb(96, 172, 57);">"{k} is apperars {v}"</span>)
+main()</pre>
+<a id="go_up" href="#code_page_header">Up</a>
+</div>
+</body>
+</html>

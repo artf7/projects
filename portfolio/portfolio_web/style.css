@@ -1,0 +1,212 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Yantramanav');
+/* * {
+    outline: 1px solid #f00 !important;
+  } */
+/*creating animation for choised elements*/
+html {
+    scroll-behavior: smooth;
+  }
+header{
+    padding-bottom: 0;
+}
+body{
+    background-color: #E6E6E6;
+    font-size: 36px;
+    min-height: 1000px;
+    margin:0;
+    font-family: 'Yantramanav';
+  }
+
+hr{
+    margin-top: -15px;
+}
+
+/* For projects and assignments */
+div#content_prog{
+    width: 100%;
+    display: flex;
+    /* word-break: break-all; */
+    overflow-x: scroll;
+    min-height: 700px;
+    scrollbar-color:#D9D9D9 ;
+    height: 500px;
+}
+
+div#content_prog div.code_prog{
+    padding: 0;
+    max-width: 5500px;
+    max-height: 550px;
+    min-width: 550px;
+    max-width: 550px;
+    margin: 15px 40px;
+    border: 30px;
+    border-radius: 32px;
+    background: linear-gradient(145deg, #e4e4e4, #c0bfbf);
+    box-shadow:  7px 7px 14px #b8b8b8,
+                 -7px -7px 14px #fafafa;
+    transition: 0.5s;
+}  
+
+
+ 
+div#content_prog div.code_prog:hover{
+    box-shadow:  7px 7px 14px #ededed,
+                 -7px -7px 14px #E6E6E6;
+    margin-left: 2%;
+    margin-right: 2% ;
+    transform: scale(1.04);
+   
+}
+
+/* make scrollbar transperent*/
+div#content_prog::-webkit-scrollbar{
+    width: 15px;
+}
+
+
+/* header */
+nav#pages{
+    padding: auto auto;
+    background-color:rgba(170, 170, 172, 1) ;
+    text-align: center;
+    height: 100px;
+
+}
+
+nav#pages ul#nav_list{
+    margin: 0;
+    padding:0.7em 0;
+    display: block;
+    list-style:none;
+}
+ul#nav_list li{
+    display: inline;
+    text-align: center;
+    margin:auto 4%;
+}
+a.nav_links {
+    text-decoration: none;
+    color:rgba(0, 0, 0, 1);
+    transition: 0.2s;
+}
+
+
+a.nav_links:hover{
+    padding: 4px;
+    border: solid;
+    border: 0.1px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    border-width: thin;
+}
+
+a.code_link{
+    margin-top: 10px;
+    text-decoration: none;
+    color:rgba(0, 0, 0, 1);
+    transition: 0.2s;
+}
+a.code_link:hover{
+    text-decoration:underline;
+}
+.code_prog h2{
+    margin-left: 5%;
+    margin-right: auto;
+}
+.code_prog h3{
+    font-size: 26px;
+    margin-top: -10%;
+    margin-left: 5%;
+}
+.code_prog ul{
+    margin-top: 6px;
+    width: 85%;
+    font-size:24px;
+    margin-left: 1%;
+}
+
+/* For pages with code */
+
+div#code_page_header {
+    background-color: rgb(197, 197, 198) ;
+}
+
+div#code_content{
+    width: 100%;
+}
+a#go_up::after{
+    content:" ⤴";
+}
+a#back_link, a#go_up{
+    margin-left: 1%;
+    text-align: center;
+    padding: 0;
+    min-width: 100px;
+    max-width: 300px;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #c1c1c1, #d3d2d2);
+    transition: 0.5s;
+    display: block;
+    text-decoration: none;
+    color:rgba(0, 0, 0, 1);
+    font-family:'Yantramanav' ;
+    transition: 0.36s;
+    margin-bottom: 30px;
+}
+a#back_link:hover{
+    border-radius: 30px;
+ 
+    transform: scale(1.04);
+}
+
+#code_content h3::after{
+    content: "⤵";
+}
+h1#name{
+    font-size: 100px;
+}
+#skills, #social_networks, #future{
+    list-style-type: "→ ";
+    margin-left: 1%;
+    background-color:#c1c1c1 ;
+    font-size: 40px;
+    display: block;
+    width: 80%;
+    padding: 40px;
+    border-radius: 30px;
+}
+
+#skills li{
+    margin-left: 1%;
+    margin-bottom: 1%;
+}
+#social_networks li{
+    margin-left: 1%;
+    margin-bottom: 1%;
+}
+
+#future li{
+    margin-left: 1%;
+    margin-bottom: 1%;
+}
+#social_networks a{
+    text-decoration: none;
+    color:rgba(0, 0, 0, 1);
+    transition: 0.2s;
+}
+#social_networks a:hover{
+    text-decoration: underline;
+}
+
+p.subject{
+    text-align: center;
+    display: block;
+    background-color: #c1c1c1;
+    max-width: 100%;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-radius: 15px;
+}
+#name,#proj{
+    margin-left: 1%;
+}

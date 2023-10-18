@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Assignment 2</title>
+</head>
+<body>
+    <div id ="code_page_header">
+    <h1>Assignment 2</h1>
+    <h2>Operators and Conditions</h2>
+    </div>
+    <a id="back_link" href="projects.html">Back</a>
+    <div id="code_content">
+        <h3>Input a number, and find all the numbers that divide evenly into that number</h3>
+        <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(32, 32, 29); color: rgb(166, 162, 140); padding: 0.5em;">user_num = int(<span class="hljs-keyword" style="color: rgb(184, 84, 212);">input</span>(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Enter number: "</span>))
+<span class="hljs-keyword" style="color: rgb(184, 84, 212);">if</span> user_num == 0:
+    <span class="hljs-keyword" style="color: rgb(184, 84, 212);">print</span>(<span class="hljs-string" style="color: rgb(96, 172, 57);">"all numbers or ∞"</span>)
+<span class="hljs-keyword" style="color: rgb(184, 84, 212);">else</span>:
+    <span class="hljs-keyword" style="color: rgb(184, 84, 212);">for</span> div_nums <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> <span class="hljs-keyword" style="color: rgb(184, 84, 212);">range</span>(1, user_num+1):
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">if</span> user_num % div_nums == 0:
+            <span class="hljs-keyword" style="color: rgb(184, 84, 212);">print</span>(div_nums)
+                    </pre>
+        <h3>Find and print the Fibonacci numbers from 0 to 100</h3>
+        <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(32, 32, 29); color: rgb(166, 162, 140); padding: 0.5em;">num1 = <span class="hljs-number" style="color: rgb(182, 86, 17);">0</span> 
+num2 = <span class="hljs-number" style="color: rgb(182, 86, 17);">1</span> 
+num3 = <span class="hljs-number" style="color: rgb(182, 86, 17);">0</span> 
+<span class="hljs-keyword" style="color: rgb(184, 84, 212);">while</span> num3 &lt;= <span class="hljs-number" style="color: rgb(182, 86, 17);">100</span>:
+    print(num3)
+    num3 = num1 + num2
+    num2 = num1 
+    num1 = num3 
+        </pre>
+        <h3>Input a decimal number, and print it's hex and binary values</h3>
+<pre class="hljs" style="display: block; overflow-x: auto; background: rgb(32, 32, 29); color: rgb(166, 162, 140); padding: 0.5em;">user_num = int(input(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Enter a number: "</span>))
+
+print(f<span class="hljs-string" style="color: rgb(96, 172, 57);">"Bin: {bin(user_num)[2:]}"</span>)
+print(f<span class="hljs-string" style="color: rgb(96, 172, 57);">"Hex: {hex(user_num)[2:]}"</span>)</pre>
+<h3>The user enters a hex color code (#ffffff), and you separate and print the red, green, and blue components in hex and decima</h3>
+<pre class="hljs" style="display: block; overflow-x: auto; background: rgb(32, 32, 29); color: rgb(166, 162, 140); padding: 0.5em;">hex_numbers = [<span class="hljs-string" style="color: rgb(96, 172, 57);">'0'</span>,<span class="hljs-string" style="color: rgb(96, 172, 57);">'1'</span>,<span class="hljs-string" style="color: rgb(96, 172, 57);">'2'</span>,<span class="hljs-string" style="color: rgb(96, 172, 57);">'3'</span>,<span class="hljs-string" style="color: rgb(96, 172, 57);">'4'</span>,<span class="hljs-string" style="color: rgb(96, 172, 57);">'5'</span>,<span class="hljs-string" style="color: rgb(96, 172, 57);">'6'</span>,<span class="hljs-string" style="color: rgb(96, 172, 57);">'7'</span>,<span class="hljs-string" style="color: rgb(96, 172, 57);">'8'</span>,<span class="hljs-string" style="color: rgb(96, 172, 57);">'9'</span>,<span class="hljs-string" style="color: rgb(96, 172, 57);">'A'</span>,<span class="hljs-string" style="color: rgb(96, 172, 57);">'B'</span>,<span class="hljs-string" style="color: rgb(96, 172, 57);">'C'</span>,<span class="hljs-string" style="color: rgb(96, 172, 57);">'D'</span>,<span class="hljs-string" style="color: rgb(96, 172, 57);">'E'</span>,<span class="hljs-string" style="color: rgb(96, 172, 57);">'F'</span>]
+
+user_hex_color = input(<span class="hljs-string" style="color: rgb(96, 172, 57);">"Enter hex code of color: "</span>)
+list_verion_of_uhc = list(user_hex_color.upper())
+ 
+<span class="hljs-comment" style="color: rgb(153, 149, 128);">#checking the elements (2)is it really hex number and (1)amount of numbers</span>
+<span class="hljs-keyword" style="color: rgb(184, 84, 212);">for</span> x <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> list_verion_of_uhc:
+<span class="hljs-comment" style="color: rgb(153, 149, 128);"># checking the length</span>
+<span class="hljs-keyword" style="color: rgb(184, 84, 212);">if</span> len(user_hex_color) == <span class="hljs-number" style="color: rgb(182, 86, 17);">6</span>:
+    <span class="hljs-comment" style="color: rgb(153, 149, 128);"># check if the numbers are really hexadecimal </span>
+    <span class="hljs-keyword" style="color: rgb(184, 84, 212);">if</span> x <span class="hljs-keyword" style="color: rgb(184, 84, 212);">in</span> hex_numbers:
+        <span class="hljs-keyword" style="color: rgb(184, 84, 212);">continue</span>
+    <span class="hljs-keyword" style="color: rgb(184, 84, 212);">else</span>:
+        print(<span class="hljs-string" style="color: rgb(96, 172, 57);">'1. Error, your color is wrong (check letters which you used)'</span>)
+        exit()
+<span class="hljs-keyword" style="color: rgb(184, 84, 212);">else</span>: 
+    print(<span class="hljs-string" style="color: rgb(96, 172, 57);">'2. Error, your color is wrong (check quantity of numbers )'</span>)
+    exit()
+        
+print(<span class="hljs-string" style="color: rgb(96, 172, 57);">'#'</span>+str(user_hex_color))
+
+red = list_verion_of_uhc[<span class="hljs-number" style="color: rgb(182, 86, 17);">0</span>]+ list_verion_of_uhc[<span class="hljs-number" style="color: rgb(182, 86, 17);">1</span>]
+green = list_verion_of_uhc[<span class="hljs-number" style="color: rgb(182, 86, 17);">2</span>]+list_verion_of_uhc[<span class="hljs-number" style="color: rgb(182, 86, 17);">3</span>]
+blue = list_verion_of_uhc[<span class="hljs-number" style="color: rgb(182, 86, 17);">4</span>]+list_verion_of_uhc[<span class="hljs-number" style="color: rgb(182, 86, 17);">5</span>]
+print(<span class="hljs-string" style="color: rgb(96, 172, 57);">'16 base colors (hex)'</span>)
+print(<span class="hljs-string" style="color: rgb(96, 172, 57);">"RED:......"</span>,red)
+print(<span class="hljs-string" style="color: rgb(96, 172, 57);">"GREEN:...."</span>,green)
+print(<span class="hljs-string" style="color: rgb(96, 172, 57);">"BLUE:....."</span>,blue)
+print()
+print(<span class="hljs-string" style="color: rgb(96, 172, 57);">'10 base colors (decimal)'</span>)
+<span class="hljs-comment" style="color: rgb(153, 149, 128);"># converting from hex to decimal </span>
+red = int(red, base=<span class="hljs-number" style="color: rgb(182, 86, 17);">16</span>)
+green = int(green, base=<span class="hljs-number" style="color: rgb(182, 86, 17);">16</span>)
+blue = int(blue, base=<span class="hljs-number" style="color: rgb(182, 86, 17);">16</span>)
+print(<span class="hljs-string" style="color: rgb(96, 172, 57);">"RED:......"</span>,red)
+print(<span class="hljs-string" style="color: rgb(96, 172, 57);">"GREEN:...."</span>,green)
+print(<span class="hljs-string" style="color: rgb(96, 172, 57);">"BLUE:....."</span>,blue)</pre>    
+</div>
+<a id="go_up" href="#code_page_header">Up</a>
+</body>
+</html>
