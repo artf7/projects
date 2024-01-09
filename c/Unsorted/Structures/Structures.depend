@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1675778647 source:c:\users\user\desktop\git\prog2007\tictactoe\structures\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-
