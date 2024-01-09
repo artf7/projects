@@ -10,7 +10,7 @@ The project includes:
 
 >[!NOTE]
 >All PHP projects (except the laravel final project) are required to have a docker-compose file and Docker itself to launch them.<br>
->For the Laravel project use `php artisan serve` to launch the server and open the app. 
+>For the Laravel project use `composer install` `php artisan serve` commands to launch the server and open the app. 
 
 
 
