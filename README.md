@@ -9,9 +9,8 @@ The project includes:
 * Accelerometer game (you just need to shake a phone)
 
 >[!NOTE]
->All PHP projects are required to have a docker-compose file and Docker itself to launch them.<br>
-
-
+>All PHP projects (except the laravel final project) are required to have a docker-compose file and Docker itself to launch them.<br>
+>For Laravel project use 'php artisan serve' to lauch the server and open the app. 
 
 
 >[!IMPORTANT]
