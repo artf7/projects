@@ -6,7 +6,7 @@ The Android application is a modular app that gives users the choice to choose o
 The project includes: 
 * Wordle game
 * Rock paper scissors
-* Accelerometer game (you just need to shake phone)
+* Accelerometer game (you just need to shake a phone)
 
 >[!NOTE]
 >All PHP projects are required to have a docker-compose file and Docker itself to launch them.<br>
