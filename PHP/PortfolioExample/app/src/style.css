@@ -1,0 +1,148 @@
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body > .content{  
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 2%;
+  background-color: #ededed;
+  border-radius: 3px;
+}
+
+.content{
+  padding: 10px;
+}
+.personal-info{
+  max-width: 20em;
+}
+
+/*Style for home page*/
+
+/* Additional CSS for positioning */
+.h-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.personal-info {
+  max-width: 400px; 
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    border-radius: 3px;
+    padding-left: 0%;
+    padding-right: 0%;
+    background-color: #4e4e4e;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 3px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+    border-radius: 3px;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #FF5D6C;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+  }
+
+/* Add a color to the footer background and letters  */
+  footer{
+    border-radius: 3px;
+    margin-top: auto;
+    width: 100%;
+    height: 5em;
+    color: white;
+    text-align: center;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    color: rgb(255, 255, 255);
+    background: grey
+  }
+
+ 
+
+  .is-invalid {
+    background-color: #F4CFD1;
+
+  }
+/* Link styling */
+  a{
+    color:#000000;
+    text-decoration:underline;
+    font-weight: 500;
+  }
+  
+/*Separate style for menu links */
+#project-menu{
+  text-align: center;
+}
+.menu-link{
+  color:black;
+  text-decoration: none;
+}
+a:hover{
+  color:#FF5D6C;
+}
+
+/* Style for hide-show button*/
+.btn-outline-secondary {
+  display: block;
+  position: fixed;
+  top: 165px;
+  right: 3%; /* Adjusted position to the right side */
+  width: 200px; /* Adjusted width */
+  height: 50px;
+  z-index: 1000;
+}
+
+
+
+
+.topnav a:nth-last-child(1) {
+  text-align:right;
+}
+
+
+
+/* Chat style */
+#page-wrap                      { width: 500px; margin: 30px auto; position: relative; }
+
+#chat-wrap                      { border: 1px solid #eee; margin: 0 0 15px 0; }
+#chat-area                      { height: 300px; overflow: auto; border: 1px solid #666; padding: 20px; background: white; }
+#chat-area span                 { color: white; background: #333; padding: 4px 8px; -moz-border-radius: 5px; -webkit-border-radius: 8px; margin: 0 5px 0 0; }
+#chat-area p                    { padding: 8px 0; border-bottom: 1px solid #ccc; }
+
+#name-area                      { position: absolute; top: 12px; right: 0; color: white; font: bold 12px "Lucida Grande", Sans-Serif; text-align: right; }   
+#name-area span                 { color: #fa9f00; }
+
+#send-message-area p            { float: left; color: white; padding-top: 27px; font-size: 14px; }
+#sendie                         { border: 3px solid #999; width: 360px; padding: 10px; font: 12px "Lucida Grande", Sans-Serif; float: right; }
