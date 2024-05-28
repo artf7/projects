@@ -13,6 +13,3 @@ The project includes:
 >For the Laravel project utilize `composer install` -> `php artisan migrate:fresh` (or `php arisan migrate`) ->  `php artisan storage:link` -> `php artisan serve` commands in this particular sequence to launch the app.
 
 
-
->[!IMPORTANT]
->C# final project in progress 
